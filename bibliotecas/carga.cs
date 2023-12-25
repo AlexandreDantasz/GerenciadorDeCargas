@@ -67,6 +67,11 @@ namespace CargaGollog {
         }
     };
 
+    /*
+        Essa classe será usada para fazer acesso ao banco de dados que será usado para armazenar
+        informações de cargas da Gollog.
+    */
+    
     class CargaDao {
         private Carga iCarga;
         CargaDao() {
