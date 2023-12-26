@@ -84,7 +84,7 @@ namespace CargasGollog {
             SQLiteConnection conexaoSql;
             conexaoSql = new SQLiteConnection($"Data Source={caminhoDoBanco};Version=3");
             // tentativa de abertura do banco de dados, caso algo esteja errado
-            // a função irá retornar false para indicar uma falha
+            // a função irá mostrar a mensagem de falha para o console e retornar false
             try
             {
                 conexaoSql.Open();
@@ -92,6 +92,7 @@ namespace CargasGollog {
             catch (Exception e)
             {
                 conexaoSql.Close();
+                Console.WriteLine(e.ToString());
                 return false;
             }
             // realizando a inserção de uma nova carga no banco de dados
@@ -101,7 +102,6 @@ namespace CargasGollog {
             comandoSql.CommandText += "VALUES(" + cargaP.getCodRastreio() + ", " + cargaP.getNomeCliente() + ", ";
             comandoSql.CommandText += cargaP.getRua() + ", " + cargaP.getBairro() + ", " + cargaP.getVolPeso() + ", ";
             comandoSql.CommandText += cargaP.getDescricao() + ", " + cargaP.getData() + ");";
-            Console.WriteLine(comandoSql.CommandText);
             // tentativa de execução do comando, caso dê errado
             // a função deve retornar false para indicar uma falha
             try

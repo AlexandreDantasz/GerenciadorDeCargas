@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("localizaCargas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9cf9e4ff4e355ec8e69662cdc3d57465ae70c2ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c3de5f68a0cee5889a314931242d4db3813c37e")]
 [assembly: System.Reflection.AssemblyProductAttribute("localizaCargas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("localizaCargas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

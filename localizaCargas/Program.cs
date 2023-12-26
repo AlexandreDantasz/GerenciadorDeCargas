@@ -5,7 +5,7 @@ public class Program
     static void Main(string[] args)
     {
         Carga trem = new Carga();
-        trem.setCodRatreio("'1234'");
+        trem.setCodRatreio("'1254'");
         trem.setNomeCliente(@"'Alexandre Dantas de Mendonça'");
         trem.setRua(@"'Crisântemo'");
         trem.setBairro(@"'Jardim Bonito'");
