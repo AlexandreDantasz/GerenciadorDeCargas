@@ -4,7 +4,8 @@ namespace CargaGollog {
         Deve conter código de rastreio, nome do cliente, rua, bairro, volume e peso da carga, 
         descrição e data do desembarque   
     */
-    class Carga {
+
+    public class Carga {
         private string codigoRastreio;
         private string nomeCliente;
         private string rua;
@@ -13,14 +14,14 @@ namespace CargaGollog {
         private string descricao;
         private string data;
 
-        Carga() { // inicializa os atributos
-            codigoRastreio = new string();
-            nomeCliente = new string();
-            rua = new string();
-            bairro = new string();
-            volPeso = new string();
-            descricao = new string();
-            data = new string();
+        public Carga() { // inicializa os atributos
+            codigoRastreio = "";
+            nomeCliente = "";
+            rua = "";
+            bairro = "";
+            volPeso = "";
+            descricao = "";
+            data = "";
         }
 
         public void setCodRatreio(string newCodRastreio) {
@@ -72,9 +73,9 @@ namespace CargaGollog {
         informações de cargas da Gollog.
     */
     
-    class CargaDao {
+    public class CargaDao {
         private Carga iCarga;
-        CargaDao() {
+        public CargaDao() {
             iCarga = new Carga();
         }
     };
