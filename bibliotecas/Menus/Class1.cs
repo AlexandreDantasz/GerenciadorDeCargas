@@ -16,6 +16,7 @@ namespace Menus
         }
         public int telaInicial()
         {
+            Console.Clear();
             int resposta;
             Console.WriteLine("-------------------- SISTEMA DE CARGAS --------------------\n");
             Console.WriteLine("Digite um dos números a seguir para realizar uma ação:\n");
@@ -24,9 +25,11 @@ namespace Menus
             Console.WriteLine("2 - Remover uma carga\n");
             Console.WriteLine("3 - Buscar uma carga\n");
             Console.WriteLine("4 - Listar cargas\n");
+            Console.WriteLine("Resposta: ");
             string linha = Console.ReadLine();
             while (linha.Length > 1 || linha.Length == 0 || linha[0] < 48 || linha[0] > 52)
             {
+                Console.Clear();
                 Console.WriteLine("Resposta inválida, digite novamente\n\n");
                 Console.WriteLine("-------------------- SISTEMA DE CARGAS --------------------\n");
                 Console.WriteLine("Digite um dos números a seguir para realizar uma ação:\n");
@@ -35,6 +38,7 @@ namespace Menus
                 Console.WriteLine("2 - Remover uma carga\n");
                 Console.WriteLine("3 - Buscar uma carga\n");
                 Console.WriteLine("4 - Listar cargas\n");
+                Console.WriteLine("Resposta: ");
                 linha = Console.ReadLine();
             }
             resposta = int.Parse(linha);
@@ -43,6 +47,7 @@ namespace Menus
 
         public int telaIncluir(Carga CargaP)
         {
+            Console.Clear();
             Console.WriteLine("-------------------- INCLUIR CARGA --------------------\n");
             Console.WriteLine("Caso deseje retornar, basta digitar 0 em qualquer uma das respostas\n\n");
             Console.WriteLine("Digite o código de rastreio: ");
@@ -83,6 +88,7 @@ namespace Menus
 
         public int telaRemover(Carga cargaP)
         {
+            Console.Clear();
             Console.WriteLine("-------------------- REMOVER CARGA --------------------\n");
             Console.WriteLine("Caso deseje retornar, basta digitar 0 em qualquer uma das respostas\n\n");
             Console.WriteLine("Digite o código de rastreio: ");
@@ -94,6 +100,7 @@ namespace Menus
 
         public int telaBuscas()
         {
+            Console.Clear();
             Console.WriteLine("-------------------- BUSCAR CARGA --------------------\n");
             Console.WriteLine("Digite um dos números a seguir para realizar uma ação:\n");
             Console.WriteLine("0 - Sair\n");
@@ -103,6 +110,7 @@ namespace Menus
             string linha = Console.ReadLine();
             while (linha.Length > 1 || linha.Length == 0 || linha[0] < 48 || linha[0] > 50)
             {
+                Console.Clear();
                 Console.WriteLine("Resposta inválida, digite novamente\n\n");
                 Console.WriteLine("-------------------- BUSCAR CARGA --------------------\n");
                 Console.WriteLine("Digite um dos números a seguir para realizar uma ação:\n");
@@ -117,6 +125,7 @@ namespace Menus
 
         public int telaBuscarCarga(Carga cargaP)
         {
+            Console.Clear();
             Console.WriteLine("-------------------- BUSCAR CARGA --------------------\n");
             Console.WriteLine("Caso deseje retornar, basta digitar 0 em qualquer uma das respostas\n\n");
             Console.WriteLine("Digite o código de rastreio: ");
@@ -128,6 +137,7 @@ namespace Menus
 
         public int telaBuscarNome(Carga cargaP)
         {
+            Console.Clear();
             Console.WriteLine("-------------------- BUSCAR CARGA --------------------\n");
             Console.WriteLine("Caso deseje retornar, basta digitar 0 em qualquer uma das respostas\n\n");
             Console.WriteLine("Digite o nome do cliente: ");
