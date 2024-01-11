@@ -1,0 +1,16 @@
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\bin\Debug\net8.0\Menus.deps.json
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\bin\Debug\net8.0\Menus.dll
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\bin\Debug\net8.0\Menus.pdb
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\bin\Debug\net8.0\CargasGollog.dll
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\bin\Debug\net8.0\CargasGollog.pdb
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\Menus.csproj.AssemblyReference.cache
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\Menus.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\Menus.AssemblyInfoInputs.cache
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\Menus.AssemblyInfo.cs
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\Menus.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\Menus.sourcelink.json
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\Menus.csproj.CopyComplete
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\Menus.dll
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\refint\Menus.dll
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\Menus.pdb
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\ref\Menus.dll
