@@ -78,7 +78,63 @@ namespace CargasGollog {
 
     public class CargaDao
     {
-        private string caminhoDoBanco = @"C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\Gollog.db";
+        private string caminhoDoBanco = @".\Gollog.db";
+
+        private string tornarSeparador(string linha)
+        {
+            string tempString = "";
+            for (int i = 0; i < linha.Length; i++)
+            {
+                if (linha[i] != ' ') tempString += '-';
+                else
+                {
+                    if (i + 1 < linha.Length && linha[i + 1] == ' ') tempString += "-";
+                    else tempString += " ";
+                }
+            }
+            return tempString;
+        }
+
+        private void formatarSaida(SQLiteDataReader leitor, int[] vet, string resultado)
+        {
+            var schemaTable = leitor.GetSchemaTable();
+            int i = 0, sizeRow;
+            string nomeColunas = "";
+            foreach (DataRow row in schemaTable.Rows)
+            {
+                nomeColunas += row.Field<string>("ColumnName");
+                sizeRow = row.Field<string>("ColumnName").Length;
+                if (vet[i] < sizeRow) vet[i] = sizeRow;
+                int size = Math.Abs(vet[i] - row.Field<string>("ColumnName").Length) + 1;
+                for (int k = 0; k < size; k++)
+                {
+                    nomeColunas += " ";
+                }
+                i++;
+            }
+            Console.WriteLine(nomeColunas);
+            nomeColunas = tornarSeparador(nomeColunas);
+            Console.WriteLine(nomeColunas);
+            int contador = 0, j = 0;
+            string[] splitColunas = nomeColunas.Split(' ');
+            string saida = "";
+            for (i = 0; i < resultado.Length; i++)
+            {
+                if (contador == splitColunas[j].Length || resultado[i] == '|')
+                {
+                    int tam = Math.Abs(splitColunas[j].Length - contador);
+                    for (int k = 0; k < tam + 1; k++) saida += ' ';
+                    j++;
+                    contador = 0;
+                }
+                else
+                {
+                    saida += resultado[i];
+                    contador++;
+                }
+            }
+            Console.WriteLine(saida);
+        }
         public bool incluir(Carga cargaP)
         {
             // realizando a abertura do banco de dados
@@ -184,16 +240,24 @@ namespace CargasGollog {
             // executando a leitura
             leitorDados = comandoSql.ExecuteReader();
             int verificador = 0;
-            if (leitorDados.Read())
+            string linha = "";
+            int[] vet = {0, 0, 0, 0, 0, 0, 0};
+            while (leitorDados.Read())
             {
                 // se houver algo para ler, deve mostrar no terminal e retornar true ao fim da função
-                string linha = "Código: " + leitorDados["codRastreio"] + "\nCliente: " + leitorDados["nomeCliente"] + "\n";
-                linha += "Rua: " + leitorDados["rua"] + "\nBairro: " + leitorDados["bairro"] + "\n";
-                linha += "Vol e peso: " + leitorDados["volPeso"] + "\nDescrição: ";
-                linha += leitorDados["descricao"] + "\nData: " + leitorDados["data"];
-                Console.WriteLine(linha);
+                for (int i = 0; i < leitorDados.FieldCount; i++)
+                {
+                    string temp = (string) leitorDados.GetValue(i);
+                    linha += leitorDados.GetValue(i) + "|"; 
+                    if (temp.Length > vet[i])
+                    {
+                        vet[i] = temp.Length;
+                    }
+                }
+                linha += "\n";
                 verificador = 1;
             }
+            formatarSaida(leitorDados, vet, linha);
             conexaoSql.Close();
             return verificador == 1 ? true : false;
         }
