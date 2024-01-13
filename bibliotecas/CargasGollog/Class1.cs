@@ -1,6 +1,5 @@
 ﻿using System.Data;
 using System.Data.SQLite;
-using System.Globalization;
 
 namespace CargasGollog {
 
@@ -107,17 +106,14 @@ namespace CargasGollog {
                 sizeRow = row.Field<string>("ColumnName").Length;
                 if (vet[i] < sizeRow) vet[i] = sizeRow;
                 int size = Math.Abs(vet[i] - row.Field<string>("ColumnName").Length) + 1;
-                for (int k = 0; k < size; k++)
-                {
-                    nomeColunas += " ";
-                }
+                for (int k = 0; k < size; k++) nomeColunas += " ";
                 i++;
             }
             Console.WriteLine(nomeColunas);
             nomeColunas = tornarSeparador(nomeColunas);
             Console.WriteLine(nomeColunas);
             int j = 0;
-            string[] splitColunas = nomeColunas.Split(' ');
+            //string[] splitColunas = nomeColunas.Split(' ');
             string[] splitResultado = resultado.Split('|');
             string saida = "";
             for (i = 0; i < splitResultado.Length; i++, j++)
@@ -128,7 +124,7 @@ namespace CargasGollog {
                     saida += '\n';
                 }
                 saida += splitResultado[i];
-                for (int k = 0; k < splitColunas[j].Length - splitResultado[i].Length + 1; k++)
+                for (int k = 0; k < vet[j] - splitResultado[i].Length + 1; k++)
                     saida += " ";
             }
             Console.WriteLine(saida);
@@ -153,7 +149,7 @@ namespace CargasGollog {
             // realizando a inserção de uma nova carga no banco de dados
             SQLiteCommand comandoSql = conexaoSql.CreateCommand();
             // preparando a linha de comando que irá para o SGBD
-            comandoSql.CommandText = "INSERT INTO Cargas(codRastreio, nomeCliente, rua, bairro, volPeso, descricao, data) ";
+            comandoSql.CommandText = "INSERT INTO Cargas(codRastreio, nomeCliente, rua, bairro, volPeso, descricao, desembarque) ";
             comandoSql.CommandText += "VALUES(" + cargaP.getCodRastreio() + ", " + cargaP.getNomeCliente() + ", ";
             comandoSql.CommandText += cargaP.getRua() + ", " + cargaP.getBairro() + ", " + cargaP.getVolPeso() + ", ";
             comandoSql.CommandText += cargaP.getDescricao() + ", " + cargaP.getData() + ");";
@@ -254,9 +250,9 @@ namespace CargasGollog {
                 }
                 verificador = 1;
             }
-            formatarSaida(leitorDados, vet, linha);
+            if (verificador == 1) formatarSaida(leitorDados, vet, linha);
             conexaoSql.Close();
-            return verificador == 1 ? true : false;
+            return verificador == 1;
         }
 
         // buscarNome é uma função que busca uma carga usando o nome de um cliente como chave de busca
@@ -303,9 +299,9 @@ namespace CargasGollog {
                 }
                 verificador = 1;
             }
-            formatarSaida(leitorDados, vet, linha);
+            if (verificador == 1) formatarSaida(leitorDados, vet, linha);
             conexaoSql.Close();
-            return verificador == 1 ? true : false;
+            return verificador == 1;
         }
 
         public bool listarCargas()
@@ -330,7 +326,7 @@ namespace CargasGollog {
             // essa variável é responsável por fazer a leitura de uma consulta
             // no sqlite
             SQLiteDataReader leitorDados;
-            comandoSql.CommandText = @"SELECT * FROM Cargas ORDER BY data ASC;";
+            comandoSql.CommandText = @"SELECT * FROM Cargas ORDER BY desembarque ASC;";
             comandoSql.CommandText += ";";
             // executando a leitura
             leitorDados = comandoSql.ExecuteReader();
@@ -351,9 +347,9 @@ namespace CargasGollog {
                 }
                 verificador = 1;
             }
-            formatarSaida(leitorDados, vet, linha);
+            if (verificador == 1) formatarSaida(leitorDados, vet, linha);
             conexaoSql.Close();
-            return verificador == 1 ? true : false;
+            return verificador == 1;
         }
     };
 }

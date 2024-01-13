@@ -25,7 +25,7 @@ namespace Menus
             Console.WriteLine("2 - Remover uma carga\n");
             Console.WriteLine("3 - Buscar uma carga\n");
             Console.WriteLine("4 - Listar cargas\n");
-            Console.WriteLine("Resposta: ");
+            Console.Write("Resposta: ");
             string linha = Console.ReadLine();
             while (linha.Length > 1 || linha.Length == 0 || linha[0] < 48 || linha[0] > 52)
             {
@@ -38,7 +38,7 @@ namespace Menus
                 Console.WriteLine("2 - Remover uma carga\n");
                 Console.WriteLine("3 - Buscar uma carga\n");
                 Console.WriteLine("4 - Listar cargas\n");
-                Console.WriteLine("Resposta: ");
+                Console.Write("Resposta: ");
                 linha = Console.ReadLine();
             }
             resposta = int.Parse(linha);
@@ -50,36 +50,36 @@ namespace Menus
             Console.Clear();
             Console.WriteLine("-------------------- INCLUIR CARGA --------------------\n");
             Console.WriteLine("Caso deseje retornar, basta digitar 0 em qualquer uma das respostas\n\n");
-            Console.WriteLine("Digite o código de rastreio: ");
+            Console.Write("Digite o código de rastreio: ");
             string linha = Console.ReadLine();
             if (linha.Length != 0 && linha[0] == '0') return 0;
             CargaP.setCodRatreio("'" + linha + "'");
-            Console.WriteLine("Digite o nome do cliente completo: ");
+            Console.Write("Digite o nome do cliente completo: ");
             linha = Console.ReadLine();
             if (linha.Length != 0 && linha[0] == '0') return 0;
             CargaP.setNomeCliente("'" + linha + "'");
-            Console.WriteLine("Digite a rua: ");
+            Console.Write("Digite a rua: ");
             linha = Console.ReadLine();
             if (linha.Length != 0 && linha[0] == '0') return 0;
             CargaP.setRua("'" + linha + "'");
-            Console.WriteLine("Digite o bairro: ");
+            Console.Write("Digite o bairro: ");
             linha = Console.ReadLine();
             if (linha.Length != 0 && linha[0] == '0') return 0;
             CargaP.setBairro("'" + linha + "'");
             do
             {
                 Console.WriteLine("A data deve ser escrita com base nesse exemplo: AAAA-MM-DD");
-                Console.WriteLine("Digite a data: ");
+                Console.Write("Digite a data de desembarque: ");
                 linha = Console.ReadLine();
                 if (linha.Length != 0 && linha[0] == '0') return 0;
             }
             while (!verificaData(linha));
             CargaP.setData("'" + linha + "'");
-            Console.WriteLine("Digite o volume/peso: ");
+            Console.Write("Digite o volume/peso: ");
             linha = Console.ReadLine();
             if (linha.Length != 0 && linha[0] == '0') return 0;
             CargaP.setVolPeso("'" + linha + "'");
-            Console.WriteLine("Digite a descrição da carga: ");
+            Console.Write("Digite a descrição da carga: ");
             linha = Console.ReadLine();
             if (linha.Length != 0 && linha[0] == '0') return 0;
             CargaP.setDescricao("'" + linha + "'");
@@ -91,7 +91,7 @@ namespace Menus
             Console.Clear();
             Console.WriteLine("-------------------- REMOVER CARGA --------------------\n");
             Console.WriteLine("Caso deseje retornar, basta digitar 0 em qualquer uma das respostas\n\n");
-            Console.WriteLine("Digite o código de rastreio: ");
+            Console.Write("Digite o código de rastreio: ");
             string linha = Console.ReadLine();
             if (linha.Length != 0 && linha[0] == '0') return 0;
             cargaP.setCodRatreio("'" + linha + "'");
@@ -106,6 +106,7 @@ namespace Menus
             Console.WriteLine("0 - Sair\n");
             Console.WriteLine("1 - Buscar por código de rastreio\n");
             Console.WriteLine("2 - Buscar cargas por nome do cliente\n");
+            Console.Write("Resposta: ");
             int resposta;
             string linha = Console.ReadLine();
             while (linha.Length > 1 || linha.Length == 0 || linha[0] < 48 || linha[0] > 50)
@@ -117,6 +118,7 @@ namespace Menus
                 Console.WriteLine("0 - Sair\n");
                 Console.WriteLine("1 - Buscar por código de rastreio\n");
                 Console.WriteLine("2 - Buscar cargas por nome do cliente\n");
+                Console.Write("Resposta: ");
                 linha = Console.ReadLine();
             }
             resposta = int.Parse(linha);
@@ -128,7 +130,7 @@ namespace Menus
             Console.Clear();
             Console.WriteLine("-------------------- BUSCAR CARGA --------------------\n");
             Console.WriteLine("Caso deseje retornar, basta digitar 0 em qualquer uma das respostas\n\n");
-            Console.WriteLine("Digite o código de rastreio: ");
+            Console.Write("Digite o código de rastreio: ");
             string linha = Console.ReadLine();
             if (linha.Length != 0 && linha[0] == '0') return 0;
             cargaP.setCodRatreio("'" + linha + "'");
@@ -140,7 +142,7 @@ namespace Menus
             Console.Clear();
             Console.WriteLine("-------------------- BUSCAR CARGA --------------------\n");
             Console.WriteLine("Caso deseje retornar, basta digitar 0 em qualquer uma das respostas\n\n");
-            Console.WriteLine("Digite o nome do cliente: ");
+            Console.Write("Digite o nome do cliente: ");
             string linha = Console.ReadLine();
             if (linha.Length != 0 && linha[0] == '0') return 0;
             cargaP.setNomeCliente("'" + linha + "'");

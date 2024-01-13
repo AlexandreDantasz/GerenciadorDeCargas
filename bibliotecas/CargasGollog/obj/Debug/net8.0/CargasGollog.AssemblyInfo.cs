@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CargasGollog")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d46bc0caddcfebedb488cde762295719500db111")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+232deb11f9e6704d7e6c181f73ee2965f3c60ba9")]
 [assembly: System.Reflection.AssemblyProductAttribute("CargasGollog")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CargasGollog")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
