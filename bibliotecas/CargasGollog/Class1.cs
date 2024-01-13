@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SQLite;
+using System.Globalization;
 
 namespace CargasGollog {
 
@@ -115,23 +116,20 @@ namespace CargasGollog {
             Console.WriteLine(nomeColunas);
             nomeColunas = tornarSeparador(nomeColunas);
             Console.WriteLine(nomeColunas);
-            int contador = 0, j = 0;
+            int j = 0;
             string[] splitColunas = nomeColunas.Split(' ');
+            string[] splitResultado = resultado.Split('|');
             string saida = "";
-            for (i = 0; i < resultado.Length; i++)
+            for (i = 0; i < splitResultado.Length; i++, j++)
             {
-                if (contador == splitColunas[j].Length || resultado[i] == '|')
+                if (j == 7)
                 {
-                    int tam = Math.Abs(splitColunas[j].Length - contador);
-                    for (int k = 0; k < tam + 1; k++) saida += ' ';
-                    j++;
-                    contador = 0;
+                    j = 0;
+                    saida += '\n';
                 }
-                else
-                {
-                    saida += resultado[i];
-                    contador++;
-                }
+                saida += splitResultado[i];
+                for (int k = 0; k < splitColunas[j].Length - splitResultado[i].Length + 1; k++)
+                    saida += " ";
             }
             Console.WriteLine(saida);
         }
@@ -254,7 +252,6 @@ namespace CargasGollog {
                         vet[i] = temp.Length;
                     }
                 }
-                linha += "\n";
                 verificador = 1;
             }
             formatarSaida(leitorDados, vet, linha);
@@ -290,16 +287,23 @@ namespace CargasGollog {
             // executando a leitura
             leitorDados = comandoSql.ExecuteReader();
             int verificador = 0;
+            string linha = "";
+            int[] vet = { 0, 0, 0, 0, 0, 0, 0 };
             while (leitorDados.Read())
-            { 
+            {
                 // se houver algo para ler, deve mostrar no terminal e retornar true ao fim da função
-                string linha = "Código: " + leitorDados["codRastreio"] + "\nCliente: " + leitorDados["nomeCliente"] + "\n";
-                linha += "Rua: " + leitorDados["rua"] + "\nBairro: " + leitorDados["bairro"] + "\n";
-                linha += "Vol e peso: " + leitorDados["volPeso"] + "\nDescrição: ";
-                linha += leitorDados["descricao"] + "\nData: " + leitorDados["data"] + "\n";
-                Console.WriteLine(linha);
+                for (int i = 0; i < leitorDados.FieldCount; i++)
+                {
+                    string temp = (string)leitorDados.GetValue(i);
+                    linha += leitorDados.GetValue(i) + "|";
+                    if (temp.Length > vet[i])
+                    {
+                        vet[i] = temp.Length;
+                    }
+                }
                 verificador = 1;
             }
+            formatarSaida(leitorDados, vet, linha);
             conexaoSql.Close();
             return verificador == 1 ? true : false;
         }
@@ -331,16 +335,23 @@ namespace CargasGollog {
             // executando a leitura
             leitorDados = comandoSql.ExecuteReader();
             int verificador = 0;
+            string linha = "";
+            int[] vet = {0, 0, 0, 0, 0, 0, 0};
             while (leitorDados.Read())
             {
                 // se houver algo para ler, deve mostrar no terminal e retornar true ao fim da função
-                string linha = "Código: " + leitorDados["codRastreio"] + "\nCliente: " + leitorDados["nomeCliente"] + "\n";
-                linha += "Rua: " + leitorDados["rua"] + "\nBairro: " + leitorDados["bairro"] + "\n";
-                linha += "Vol e peso: " + leitorDados["volPeso"] + "\nDescrição: ";
-                linha += leitorDados["descricao"] + "\nData: " + leitorDados["data"] + "\n";
-                Console.WriteLine(linha);
+                for (int i = 0; i < leitorDados.FieldCount; i++)
+                {
+                    string temp = (string)leitorDados.GetValue(i);
+                    linha += leitorDados.GetValue(i) + "|";
+                    if (temp.Length > vet[i])
+                    {
+                        vet[i] = temp.Length;
+                    }
+                }
                 verificador = 1;
             }
+            formatarSaida(leitorDados, vet, linha);
             conexaoSql.Close();
             return verificador == 1 ? true : false;
         }

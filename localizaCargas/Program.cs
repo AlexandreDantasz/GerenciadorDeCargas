@@ -1,9 +1,10 @@
 ﻿using Menus;
 using CargasGollog;
+
 public class Program
 {
     static void Main(string[] args)
-    { 
+    {
         Telas monitor = new Telas();
         Carga carga = new Carga();
         CargaDao dao = new CargaDao();
