@@ -1,5 +1,6 @@
 ﻿using Menus;
 using CargasGollog;
+using CargasExcel;
 
 public class Program
 {
@@ -59,6 +60,12 @@ public class Program
                 case 4:
                     Console.Clear();
                     feedback = dao.listarCargas() == true ? "As cargas foram listadas" : "Não foi possível listar as cargas";
+                    Console.WriteLine($"Status: {feedback}");
+                    Console.Write("Pressione enter para sair: ");
+                    lixo = Console.ReadLine();
+                    break;
+                case 5:
+                    feedback = monitor.telaExportarExcel() == 1 ? "Exportação efetuada com sucesso" : "Não foi possível exportar o banco de dados";
                     Console.WriteLine($"Status: {feedback}");
                     Console.Write("Pressione enter para sair: ");
                     lixo = Console.ReadLine();

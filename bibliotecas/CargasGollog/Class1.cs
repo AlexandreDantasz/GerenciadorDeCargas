@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SQLite;
+using System.Globalization;
 
 namespace CargasGollog {
 
@@ -348,6 +349,47 @@ namespace CargasGollog {
                 verificador = 1;
             }
             if (verificador == 1) formatarSaida(leitorDados, vet, linha);
+            conexaoSql.Close();
+            return verificador == 1;
+        }
+
+        static public bool informaString(string saida, string caminhoDoBanco)
+        {
+            // realizando a abertura do banco de dados
+            SQLiteConnection conexaoSql;
+            conexaoSql = new SQLiteConnection($"Data Source={caminhoDoBanco};Version=3");
+            // tentativa de abertura do banco de dados, caso algo esteja errado
+            // a função irá mostrar a mensagem de falha para o console e retornar false
+            try
+            {
+                conexaoSql.Open();
+            }
+            catch (Exception e)
+            {
+                conexaoSql.Close();
+                Console.WriteLine(e.ToString());
+                return false;
+            }
+            // criando a linha de comando para o banco de dados
+            SQLiteCommand comandoSql = conexaoSql.CreateCommand();
+            // essa variável é responsável por fazer a leitura de uma consulta
+            // no sqlite
+            SQLiteDataReader leitorDados;
+            comandoSql.CommandText = @"SELECT * FROM Cargas ORDER BY desembarque ASC;";
+            comandoSql.CommandText += ";";
+            // executando a leitura
+            leitorDados = comandoSql.ExecuteReader();
+            int verificador = 0;
+            while (leitorDados.Read())
+            {
+                // se houver algo para ler, deve mostrar no terminal e retornar true ao fim da função
+                for (int i = 0; i < leitorDados.FieldCount; i++)
+                {
+                    string temp = (string) leitorDados.GetValue(i);
+                    saida += leitorDados.GetValue(i) + "|";
+                }
+                verificador = 1;
+            };
             conexaoSql.Close();
             return verificador == 1;
         }

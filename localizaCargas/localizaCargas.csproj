@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="CargasExcel">
+      <HintPath>..\bibliotecas\CargasExcel\bin\Debug\net8.0\CargasExcel.dll</HintPath>
+    </Reference>
     <Reference Include="CargasGollog">
       <HintPath>..\bibliotecas\CargasGollog\obj\Debug\net8.0\CargasGollog.dll</HintPath>
     </Reference>

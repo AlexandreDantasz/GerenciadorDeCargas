@@ -7,8 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="CargasExcel">
+      <HintPath>..\CargasExcel\bin\Debug\net8.0\CargasExcel.dll</HintPath>
+    </Reference>
     <Reference Include="CargasGollog">
       <HintPath>..\CargasGollog\obj\Debug\net8.0\CargasGollog.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>..\CargasExcel\bin\Debug\net8.0\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
   </ItemGroup>
 

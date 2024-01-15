@@ -14,3 +14,6 @@ C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\Menus.dll
 C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\refint\Menus.dll
 C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\Menus.pdb
 C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\obj\Debug\net8.0\ref\Menus.dll
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\bin\Debug\net8.0\CargasExcel.dll
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\bin\Debug\net8.0\CargasExcel.pdb
+C:\Users\alexa\Documents\Gollog\bibliotecas\Menus\bin\Debug\net8.0\Microsoft.Office.Interop.Excel.dll

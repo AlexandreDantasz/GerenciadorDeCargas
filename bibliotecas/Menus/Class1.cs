@@ -1,4 +1,6 @@
-﻿using CargasGollog;
+﻿using System.Globalization;
+using CargasGollog;
+using CargasExcel;
 
 namespace Menus
 {
@@ -14,6 +16,13 @@ namespace Menus
             }
             return true;
         }
+
+        private bool verificaExcel(string caminho)
+        {
+            int i;
+            for (i = 0; i < caminho.Length && caminho[i] != '.'; i++) ;
+            return i == caminho.Length;
+        }
         public int telaInicial()
         {
             Console.Clear();
@@ -25,9 +34,10 @@ namespace Menus
             Console.WriteLine("2 - Remover uma carga\n");
             Console.WriteLine("3 - Buscar uma carga\n");
             Console.WriteLine("4 - Listar cargas\n");
+            Console.WriteLine("5 - Exportar para excel\n");
             Console.Write("Resposta: ");
             string linha = Console.ReadLine();
-            while (linha.Length > 1 || linha.Length == 0 || linha[0] < 48 || linha[0] > 52)
+            while (linha.Length > 1 || linha.Length == 0 || linha[0] < 48 || linha[0] > 53)
             {
                 Console.Clear();
                 Console.WriteLine("Resposta inválida, digite novamente\n\n");
@@ -38,6 +48,7 @@ namespace Menus
                 Console.WriteLine("2 - Remover uma carga\n");
                 Console.WriteLine("3 - Buscar uma carga\n");
                 Console.WriteLine("4 - Listar cargas\n");
+                Console.WriteLine("5 - Exportar para excel\n");
                 Console.Write("Resposta: ");
                 linha = Console.ReadLine();
             }
@@ -147,6 +158,27 @@ namespace Menus
             if (linha.Length != 0 && linha[0] == '0') return 0;
             cargaP.setNomeCliente("'" + linha + "'");
             return 1;
+        }
+
+        public int telaExportarExcel()
+        {
+            Console.Clear();
+            Console.WriteLine("-------------------- EXPORTAR --------------------\n");
+            Console.WriteLine("Caso deseje retornar, basta digitar 0 em qualquer uma das respostas\n\n");
+            Console.Write("Digite o nome do arquivo excel (sem extensão): ");
+            string linha = Console.ReadLine();
+            if (linha.Length != 0 && linha[0] == '0') return 0;
+            while (!verificaExcel(linha))
+            {
+                Console.Clear();
+                Console.WriteLine("O nomo do arquivo não deve conter extensão, tente novamente\n");
+                Console.WriteLine("-------------------- EXPORTAR --------------------\n");
+                Console.WriteLine("Caso deseje retornar, basta digitar 0 em qualquer uma das respostas\n\n");
+                Console.Write("Digite o nome do arquivo excel (sem extensão): ");
+                linha = Console.ReadLine();
+                if (linha.Length != 0 && linha[0] == '0') return 0;
+            }
+            return GollogExcel.criar(linha) ? 1 : 0;
         }
     };
 }
