@@ -14,5 +14,5 @@ C:\Users\alexa\Documents\Gollog\bibliotecas\CargasExcel\obj\Debug\net8.0\CargasE
 C:\Users\alexa\Documents\Gollog\bibliotecas\CargasExcel\obj\Debug\net8.0\refint\CargasExcel.dll
 C:\Users\alexa\Documents\Gollog\bibliotecas\CargasExcel\obj\Debug\net8.0\CargasExcel.pdb
 C:\Users\alexa\Documents\Gollog\bibliotecas\CargasExcel\obj\Debug\net8.0\ref\CargasExcel.dll
-C:\Users\alexa\Documents\Gollog\bibliotecas\CargasExcel\obj\Debug\net8.0\Interop.Microsoft.Office.Core.dll
 C:\Users\alexa\Documents\Gollog\bibliotecas\CargasExcel\obj\Debug\net8.0\CargasExcel.csproj.ResolveComReference.cache
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasExcel\obj\Debug\net8.0\Interop.Microsoft.Office.Interop.Excel.dll

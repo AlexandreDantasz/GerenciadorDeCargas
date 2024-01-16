@@ -47,4 +47,3 @@ C:\Users\alexa\Documents\Gollog\localizaCargas\bin\Debug\net8.0\Menus.dll
 C:\Users\alexa\Documents\Gollog\localizaCargas\bin\Debug\net8.0\Menus.pdb
 C:\Users\alexa\Documents\Gollog\localizaCargas\bin\Debug\net8.0\CargasExcel.dll
 C:\Users\alexa\Documents\Gollog\localizaCargas\bin\Debug\net8.0\CargasExcel.pdb
-C:\Users\alexa\Documents\Gollog\localizaCargas\bin\Debug\net8.0\Microsoft.Office.Interop.Excel.dll

@@ -353,7 +353,7 @@ namespace CargasGollog {
             return verificador == 1;
         }
 
-        static public bool informaString(string saida, string caminhoDoBanco)
+        static public bool informaString(ref string saida, string caminhoDoBanco)
         {
             // realizando a abertura do banco de dados
             SQLiteConnection conexaoSql;
@@ -376,7 +376,6 @@ namespace CargasGollog {
             // no sqlite
             SQLiteDataReader leitorDados;
             comandoSql.CommandText = @"SELECT * FROM Cargas ORDER BY desembarque ASC;";
-            comandoSql.CommandText += ";";
             // executando a leitura
             leitorDados = comandoSql.ExecuteReader();
             int verificador = 0;
@@ -386,10 +385,10 @@ namespace CargasGollog {
                 for (int i = 0; i < leitorDados.FieldCount; i++)
                 {
                     string temp = (string) leitorDados.GetValue(i);
-                    saida += leitorDados.GetValue(i) + "|";
+                    saida += temp + "|";
                 }
                 verificador = 1;
-            };
+            }
             conexaoSql.Close();
             return verificador == 1;
         }

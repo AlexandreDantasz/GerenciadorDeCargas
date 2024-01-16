@@ -178,7 +178,7 @@ namespace Menus
                 linha = Console.ReadLine();
                 if (linha.Length != 0 && linha[0] == '0') return 0;
             }
-            return GollogExcel.criar(linha) ? 1 : 0;
+            return GollogExcel.criar(linha + ".xlsx") ? 1 : 0;
         }
     };
 }
