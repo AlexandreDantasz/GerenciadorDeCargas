@@ -1,0 +1,15 @@
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\bin\Release\net8.0\CargasGollog.deps.json
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\bin\Release\net8.0\CargasGollog.runtimeconfig.json
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\bin\Release\net8.0\CargasGollog.dll
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\bin\Release\net8.0\CargasGollog.pdb
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\obj\Release\net8.0\CargasGollog.csproj.AssemblyReference.cache
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\obj\Release\net8.0\CargasGollog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\obj\Release\net8.0\CargasGollog.AssemblyInfoInputs.cache
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\obj\Release\net8.0\CargasGollog.AssemblyInfo.cs
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\obj\Release\net8.0\CargasGollog.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\obj\Release\net8.0\CargasGollog.sourcelink.json
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\obj\Release\net8.0\CargasGollog.dll
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\obj\Release\net8.0\refint\CargasGollog.dll
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\obj\Release\net8.0\CargasGollog.pdb
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\obj\Release\net8.0\CargasGollog.genruntimeconfig.cache
+C:\Users\alexa\Documents\Gollog\bibliotecas\CargasGollog\obj\Release\net8.0\ref\CargasGollog.dll

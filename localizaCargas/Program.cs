@@ -1,6 +1,5 @@
 ﻿using Menus;
 using CargasGollog;
-using CargasExcel;
 
 public class Program
 {
@@ -9,6 +8,7 @@ public class Program
         Telas monitor = new Telas();
         Carga carga = new Carga();
         CargaDao dao = new CargaDao();
+        dao.inicializarBanco();
         int loop = monitor.telaInicial();
         string feedback = "";
         string lixo = "";

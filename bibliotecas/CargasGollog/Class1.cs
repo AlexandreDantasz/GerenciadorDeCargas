@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Data.SQLite;
 using System.Globalization;
+using System.IO;
 
 namespace CargasGollog {
 
@@ -79,7 +80,13 @@ namespace CargasGollog {
 
     public class CargaDao
     {
-        private string caminhoDoBanco = @".\Gollog.db";
+        static private string caminhoDoBanco = "";
+
+        public void inicializarBanco()
+        {
+            string diretorioBase = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            caminhoDoBanco = Path.Combine(diretorioBase, "Gollog.db");
+        }
 
         private string tornarSeparador(string linha)
         {
@@ -328,7 +335,6 @@ namespace CargasGollog {
             // no sqlite
             SQLiteDataReader leitorDados;
             comandoSql.CommandText = @"SELECT * FROM Cargas ORDER BY desembarque ASC;";
-            comandoSql.CommandText += ";";
             // executando a leitura
             leitorDados = comandoSql.ExecuteReader();
             int verificador = 0;
