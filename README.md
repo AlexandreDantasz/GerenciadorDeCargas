@@ -28,7 +28,7 @@
     - Entre na pasta localizaCargas com `cd localizaCargas`
     - Digite `dotnet run` e pressione `enter`
 
-## Configuração o banco de dados :hammer:
+## Configurando o banco de dados :hammer:
 
 ### Localização :round_pushpin:
 O banco de dados está localizado na pasta **localizaCargas**, dentro das pastas **bin/Debug/net8.0** e **bin/Release/net8.0**, além disso, o banco também está presente em **bin/Debug/net8.0/win-x64** e **bin/Release/net8.0/publish**
