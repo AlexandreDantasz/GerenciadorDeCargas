@@ -14,7 +14,7 @@
 - **Microsoft.Office.Interop.Excel | Versão: 15.0.4795.1001**
 
 ## Como rodar o projeto :white_check_mark:
-1. Instale o **.NET 8.0** através desse [link](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+1. Instale o **.NET 8.0** através desse [link](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 2. Instale o **SQLite 3** através desse [link](https://www.sqlite.org/download.html)
 3. Instale o **Microsoft Excel** através desse [link](https://www.microsoft.com/pt-br/microsoft-365/microsoft-office)
 4. Faça o clone desse [repositório](https://github.com/AlexandreDantasz/Gollog) na sua máquina:
@@ -41,5 +41,5 @@ CREATE TABLE IF NOT EXISTS Cargas(codRastreio TEXT PRIMARY KEY NOT NULL, nomeCli
 ```
 
 ## Problemas encontrados :warning:
-- Ao adicionar a dependência **Microsoft.Office.Interop.Excel** encontrei erros que indicavam a falha de busca das informações necessárias para incluir a dependência, em razão disso, adicionei a referência COM **Microsoft Excel 16.0 Object Librabry** versão **1.9** no [Visual Studio](https://visualstudio.microsoft.com). Para mais informações acesse esse [link](https://learn.microsoft.com/en-us/answers/questions/1496033/microsoft-office-interop-excel-reference-cannot-be) para minha pergunta no fórum da Microsoft (EN-US)
+- Ao adicionar a dependência **Microsoft.Office.Interop.Excel** encontrei erros que indicavam a falha de busca das informações necessárias para incluir a dependência, em razão disso, adicionei a referência COM **Microsoft Excel 16.0 Object Librabry** versão **1.9** no [Visual Studio](https://visualstudio.microsoft.com). Para mais informações acesse esse [link](https://learn.microsoft.com/en-us/answers/questions/1496033/microsoft-office-interop-excel-reference-cannot-be) para informações no fórum da Microsoft (EN-US)
 - Ao publicar o projeto como [single-file](https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview?tabs=cli) ocorria um erro com a dependência **System.Data.SQLite** uma vez que a função `Path.GetDirectoryName()`, que estava sendo usada dentro da dependência, retornava uma string nula em versões iguais ou mais recentes a .NET 5, para resolver isso, decidi abdicar da publicação single-file. Um trade-off para a garantia do funcionamento do projeto.
