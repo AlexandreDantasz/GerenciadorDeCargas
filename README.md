@@ -1,10 +1,10 @@
-### Sistema Gerenciador de Cargas :file_folder:
-O sistema usa um banco de dados para incluir, remover, buscar, listar informações de cargas e transferir essas informações para um arquivo de Excel.<br>
-Criado com o intuito de facilitar a documentação e o gerenciamento de cargas de um funcionário da Gollog.
+# Sistema Gerenciador de Cargas :file_folder:
+<p>O sistema usa um banco de dados para incluir, remover, buscar, listar informações de cargas e transferir essas informações para um arquivo de Excel.<br>
+Criado com o intuito de facilitar a documentação e o gerenciamento de cargas de um funcionário da Gollog.</p>
 
-## Tecnologias Utilizadas
-:pushpin: [.NET](https://dotnet.microsoft.com/en-us/download/dotnet)
-:pushpin: [SQLite3](https://www.sqlite.org/download.html)
+## Tecnologias Utilizadas :pushpin:
+[.NET](https://dotnet.microsoft.com/en-us/download/dotnet)<br>
+[SQLite3](https://www.sqlite.org/download.html)
 
 ## Dependências e Versões :calendar:
 - .NET | Versão: 8.0
@@ -12,4 +12,4 @@ Criado com o intuito de facilitar a documentação e o gerenciamento de cargas d
 - System.Data.SQLite | Versão: 1.0.118
 - Microsoft.Office.Interop.Excel |
 
-## Como rodar o projeto :chart:
+## Como rodar o projeto :white_check_mark:
