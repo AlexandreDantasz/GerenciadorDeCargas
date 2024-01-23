@@ -2,7 +2,7 @@
 <p>O sistema usa um banco de dados para incluir, remover, buscar, listar informações de cargas e transferir essas informações para um arquivo de Excel. Criado com o intuito de facilitar a documentação e o gerenciamento de cargas de um funcionário da Gollog.</p>
 
 ## Tecnologias Utilizadas :pushpin:
-- [C#](https://learn.microsoft.com/en-us/dotnet/csharp/):Linguagem de programação<br>
+- [C#](https://learn.microsoft.com/en-us/dotnet/csharp/): Linguagem de programação<br>
 - [.NET](https://dotnet.microsoft.com/en-us/download/dotnet)<br>
 - [SQLite 3](https://www.sqlite.org/download.html)<br>
 - [Microsoft Excel](https://www.microsoft.com/pt-br/microsoft-365/microsoft-office)
@@ -33,7 +33,7 @@
 ### Localização :round_pushpin:
 O banco de dados está localizado na pasta **localizaCargas**, dentro das pastas **bin/Debug/net8.0** e **bin/Release/net8.0**, além disso, o banco também está presente em **bin/Debug/net8.0/win-x64** e **bin/Release/net8.0/publish**
 
-### Lista de comandos :page_with_curl:
+### Lista de comandos (terminal) :page_with_curl:
 ```
 sqlite3
 .open Gollog.db
