@@ -20,7 +20,7 @@
 4. Faça o clone desse [repositório](https://github.com/AlexandreDantasz/Gollog) na sua máquina:
     - Crie uma pasta no seu computador para esse programa.
     - Abra o `git bash` ou `terminal` dentro dessa pasta.
-    - Digite `git clone https://github.com/AlexandreDantasz/Gollog` e pressione `enter`
+    - Digite `git clone https://github.com/AlexandreDantasz/GerenciadorDeCargas` e pressione `enter`
 5. Adicione as dependências necessárias, dentro dessa pasta criada.
     - **System.Data.SQLite:** `dotnet add package System.Data.SQLite --version 1.0.118`
     - **Microsoft.Office.Interop.Excel:** Caso o programa aponte erro pela falta dessa dependência, tente `dotnet add package Microsoft.Office.Interop.Excel --version 15.0.4795.1001`
